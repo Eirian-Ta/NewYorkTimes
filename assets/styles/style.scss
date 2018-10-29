@@ -1,0 +1,249 @@
+@font-face {
+    font-family: OpenSansLight;
+    src: url(../../dist/fonts/OpenSans-Light.ttf) format("truetype");
+}
+
+
+$background-color: #000;
+$font-color: #fff;
+$border-color: #ccc;
+$footer-text-color: #c2c2c2;
+
+
+$tablet: "(min-width: 480px) and (max-width: 1024px)";
+$desktop: "(min-width: 1024px)";
+
+@mixin flex-tablet {
+	display: flex;
+	justify-content: center;
+}
+
+@mixin flex-desktop {
+	display: flex;
+	justify-content: flex-start;
+}
+
+
+
+html {
+	font-family: "OpenSansLight", sans-serif;
+    font-size: 62.5%;
+}
+
+
+body {
+ 	font-size: 1.6rem;
+ 	background-color: $background-color;
+	color: $font-color;
+	text-align: center; 
+}
+
+
+/*DEFAULT - FOR MOBILE*/
+
+/*HEADER - START*/
+
+
+/* For the button - start */
+
+
+.selectDiv {
+	width: 170px;
+	height: 28px;
+	line-height:28px;
+	overflow: hidden;
+	background: url(../../dist/images/select-button.png) no-repeat right $font-color;
+	border: $border-color 1px solid;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    padding:0px;
+    position: relative;
+    z-index:1;
+
+    .selectDefault {
+	    font-size:1.3rem;
+	    color: $background-color;
+	    margin-left:-50%;
+	}
+
+    select {
+    	margin:0px;
+		padding:0px;
+	    opacity:0;
+	    filter:alpha(opacity=0);
+	    position:absolute;
+	    top:0;
+	    left:0;
+	    width:100%;
+	    height:100%;
+	    display:block;
+	    z-index:101; 
+
+	    &:focus {
+	    	outline: none;
+	    }   	
+    }
+
+    option {
+    	font-size:1.3rem;
+    }
+ }
+
+/*For the button - end*/
+
+
+.beforeSelecting {
+	width:100vw;
+	height:88vh;
+	text-align: center;
+	display: grid;
+	grid-template-columns: 5% auto  5%;
+	grid-template-rows: calc((100% - 20rem) / 2) auto  calc((100% - 20rem) / 2);
+
+	img {
+		width: 20rem;
+		height:20rem;
+		margin:0 3vw 0 0;
+		padding:0;
+	}
+}
+
+
+.afterSelecting {
+	img {
+		transform: scale(0.75);
+		-webkit-transition:1s;
+	}
+
+	> * {
+		margin:3rem;	
+		-webkit-transition:1s;
+	}	
+}
+
+
+.grid {	
+	grid-column: 2 / 3;
+	grid-row: 2 / 3;
+	justify-content: center;
+	align-self: center;
+}
+
+/*HEADER - END*/
+
+
+/*MAIN - START*/
+
+main {
+	@include flex-tablet;
+	flex-wrap: wrap;
+}
+
+a {
+	text-decoration: none;
+	color: $font-color;
+}
+
+.articles {
+	width: 100vw;
+	transition: width 1s ease;
+	height: 110vw;
+	overflow: hidden;
+	position: relative;
+
+	img {
+		height: 110vw;
+		transition: width 1s ease;
+	}
+
+	p {
+		text-align: left;
+		padding-left:1rem;
+		padding-right:1rem;
+		margin:0;
+		background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5));
+		position:absolute;
+		bottom:0;
+		&:hover {
+			visibility: hidden;
+			transition:0.5s ease-in;
+		}
+	}
+
+}
+
+/*MAIN - END*/
+
+
+/*FOOTER - START*/
+
+footer {
+	text-align: center;
+	color: $footer-text-color;
+}
+
+
+
+/*	Most of the Smartphones Mobiles (Portrait) -> B/w 320px to 479px
+	Low Resolution Tablets, Mobiles (Landscape) -> B/w 481px to 767px
+	Tablets, Ipads-> B/w 768px to 1024px */
+
+/* FOR TABLET*/
+
+@media #{$tablet} {
+    .grid {
+		@include flex-tablet;
+		align-items: center;
+	}
+
+ 	.afterSelecting {
+		@include flex-tablet;
+	}
+
+	.articles {
+	width: calc((100vw / 3) - 8px);
+	height: calc(100vh / 2);
+		img {
+			height: calc((100vh / 2));
+		}
+	}
+
+}
+
+
+/* Laptops, Desktops -> 1024px to higher resolution */
+
+/*FOR DESKTOP*/
+
+@media #{$desktop} {
+	.grid {
+		@include flex-desktop;
+		align-items: center;
+	}
+	
+	.afterSelecting {
+		@include flex-desktop;
+	}
+
+	.articles {
+	width: calc((100vw / 4) - 5px);
+	height: calc((100vw / 3));
+
+		img {
+			height: calc((100vw / 3));
+		}
+	
+	}	
+
+	footer {
+		text-align: left;
+		margin-left: 3rem;
+	}
+}
+
+
+
+
+

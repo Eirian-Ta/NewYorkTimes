@@ -1,0 +1,31 @@
+{
+  "name": "project_2",
+  "version": "1.0.0",
+  "description": "without bootstrap",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "C:\\Users\\Eirian Lynn Ta\\git\\Red Academy - Project 2\\project-02 - version 1 - without bootstrap"
+  },
+  "keywords": [
+    "Top",
+    "Stories",
+    "v2",
+    "NYT",
+    "API"
+  ],
+  "author": "Eirian Ta",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp-clean-css": "^3.10.0",
+    "gulp-minify": "^3.1.0",
+    "gulp-uglify": "^3.0.1"
+  },
+  "dependencies": {
+    "gulp-rename": "^1.4.0",
+    "pump": "^3.0.0"
+  }
+}

@@ -1,0 +1,14 @@
+# Initial settings #
+####################
+*.config
+/node_modules
+/personal_notes
+
+# Packages #
+############
+*.zip
+
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
