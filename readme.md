@@ -1,4 +1,5 @@
 PROJECT 2 - RED ACADEMY - DONE BY EIRIAN LYNN TA - ABOUT 6 HOURS
+Ver 1.0.0
 
 
 Things that I've learnt after finishing this project:
